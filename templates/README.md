@@ -1,9 +1,9 @@
 ---
 YAML tags:
-- copy-paste the tags obtained with the tagging app: http://34.68.228.168:8501/
+{"task_categories": [], "task_ids": [], "multilinguality": [multilingual], "languages": [multiple], "language_creators": [Unknown], "annotations_creators": [Unknown], "source_datasets": [Original], "size_categories": ["10K<n<100K"], "licenses": [Unknown]}
 ---
 
-# Dataset Card for [Dataset Name]
+# Dataset Card for disaster_response_messages
 
 ## Table of Contents
 - [Dataset Description](#dataset-description)
@@ -30,53 +30,142 @@ YAML tags:
 
 ## Dataset Description
 
-- **Homepage:**
-- **Repository:**
-- **Paper:**
-- **Leaderboard:**
-- **Point of Contact:**
+- **Homepage: [Homepage]("https://appen.com/datasets/combined-disaster-response-data/")
+- **Repository: [Datasets]("https://datasets.appen.com/appen_datasets/disaster_response_data/disaster_response_messages_training.csv")
+- **Paper:NA
+- **Leaderboard: NA
+- **Point of Contact: [Darshan Gandhi](darshangandhi1151@gmail.com)
 
 ### Dataset Summary
 
-[More Information Needed]
+This dataset contains 30,000 messages drawn from events including an earthquake in Haiti in 2010, an earthquake in Chile in 2010, floods in Pakistan in 2010, super-storm Sandy in the U.S.A. in 2012, and news articles spanning a large number of years and 100s of different disasters.
+The data has been encoded with 36 different categories related to disaster response and has been stripped of messages with sensitive information in their entirety.
+Upon release, this is the featured dataset of a new Udacity course on Data Science and the AI4ALL summer school and is especially utile for text analytics and natural language processing (NLP) tasks and models.The input data in this job contains thousands of untranslated disaster-related messages and their English translations. In the “Data” tab above, you’ll find the annotated data, with 40 class labels for intent and content.
 
 ### Supported Tasks and Leaderboards
 
-[More Information Needed]
+The input data in this job contains thousands of untranslated disaster-related messages and their English translations. In the dataset, you’ll find the annotated data, with 40 class labels for intent and content.
+This dataset contains the original message in its original language, the English translation, and dozens of classes for message content. These classes are noted in column titles with a simple binary 1= yes, 2=no.
 
 ### Languages
 
-[More Information Needed]
+The dataset is a multilingual dataset which has the messages in the original language and also it's translated English form. 
 
 ## Dataset Structure
 
 ### Data Instances
 
-[More Information Needed]
+The dataset consists of a message in English and also it's original language form. Adding on, there are 40 labels which help to understand more about the exact essence of the message.
+
+Example of a Disaster Response : 
+{ 'split': 'train',
+  'message': 'Weather update - a cold front from Cuba that could pass over Haiti',
+  'original': 'Un front froid se retrouve sur Cuba ce matin. Il pourrait traverser Haiti demain. Des averses de pluie isolee sont encore prevues sur notre region ce soi',
+  'genre': 'direct',
+  'related': 1,
+  'PII': 0,
+  'request': 0,
+  'offer': 0,
+  'aid_related': 0,
+  'medical_help': 0,
+  'medical_products': 0,
+  'search_and_rescue': 0,
+  'security': 0,
+  'military': 0,
+  'child_alone': 0,
+  'water': 0,
+  'food': 0,
+  'shelter': 0,
+  'clothing': 0,
+  'money': 0,
+  'missing_people': 0,
+  'refugees': 0,
+  'death': 0,
+  'other_aid': 0,
+  'infrastructure_related': 0,
+  'transport': 0,
+  'buildings': 0,
+  'electricity': 0,
+  'tools': 0,
+  'hospitals': 0,
+  'shops': 0,
+  'aid_centers': 0,
+  'other_infrastructure': 0,
+  'weather_related': 0,
+  'floods': 0,
+  'storm': 0,
+  'fire': 0,
+  'earthquake': 0,
+  'cold': 0,
+  'other_weather': 0,
+  'direct_report': 0}
 
 ### Data Fields
 
-[More Information Needed]
+split: Train, Test split
+message: English text of actual messages related to disaster
+original: Text of column 3 in native language as originally written
+genre: Type of message, including direct messages, social posting, and news stories or bulletins
+related: Is the message disaster related? 1= yes, 0=no, 2=maybe
+PII: Does the message contain PII? 1= yes, 0=no
+request: Does the message contain a request? 1= yes, 0=no
+offer: Does the message contain an offer? 1= yes, 0=no
+aid_related: Is the message aid related? 1= yes, 0=no
+medical_help: Does the message concern medical help? 1= yes, 0=no
+medical_products: Does the message concern medical products? 1= yes, 0=no
+search_and_rescue: Does the message concern search and rescue? 1= yes, 0=no
+security: Does the message concern security? 1= yes, 0=no
+military: Does the message concern military? 1= yes, 0=no
+child_alone: Does the message mention a child alone? 1= yes, 0=no
+water: Does the message concern water? 1= yes, 0=no
+food: Does the message concern food? 1= yes, 0=no
+shelter: Does the message concern shelter? 1= yes, 0=no
+clothing: Does the message concern clothing? 1= yes, 0=no
+money: Does the message concern money? 1= yes, 0=no
+missing_people: Does the message indicate missing people? 1= yes, 0=no
+refugees: Does the message concern refugess? 1= yes, 0=no
+death: Does the message imply death? 1= yes, 0=no
+other_aid: Is there any other aid needed? 1=yes, 0=no
+infrastructure_related: Does the message concern infrastructure? 1= yes, 0=no
+transport: Does the message concern transport? 1= yes, 0=no
+buildings: Does the message concern buildings? 1= yes, 0=no
+electricity: Does the message concern electricity? 1= yes, 0=no
+tools: Does the message concern tools? 1= yes, 0=no
+hospitals: Does the message concern clothing? 1= yes, 0=no
+shops: Does the message concern clothing? 1= yes, 0=no
+aid_centers:Does the message concern clothing? 1= yes, 0=no
+other_infrastructure:Does the message concern clothing? 1= yes, 0=no
+weather_related: Does the message concern weather? 1= yes, 0=no
+floods: Does the message indicate there was a flood? 1= yes, 0=no
+storm: Does the message indicate there was a storm? 1= yes, 0=no
+fire: Does the message indicate there was a fire? 1= yes, 0=no
+earthquake: Does the message indicate there was an earthquake? 1= yes, 0=no
+cold: Does the message indicate there was a cold? 1= yes, 0=no
+other_weather: Does the message indicate there was other weather issues? 1= yes, 0=no
+direct_report: Does the show a direct report? 1= yes, 0=no
 
 ### Data Splits
 
-[More Information Needed]
+The data is split into train, test : 
+
+Train Count : 21046
+Test Count : 2629
 
 ## Dataset Creation
 
 ### Curation Rationale
 
-[More Information Needed]
+The dataset was built to understand about the sentiments of the citizens and also more about want was the emergency about and what kind of help they were seeking
 
 ### Source Data
 
 #### Initial Data Collection and Normalization
 
-[More Information Needed]
+Unknown
 
 #### Who are the source language producers?
 
-[More Information Needed]
+Unkwown 
 
 ### Annotations
 
@@ -86,36 +175,31 @@ YAML tags:
 
 #### Who are the annotators?
 
-[More Information Needed]
-
-### Personal and Sensitive Information
-
-[More Information Needed]
+Unknown
 
 ## Considerations for Using the Data
 
 ### Social Impact of Dataset
 
-[More Information Needed]
+The dataset has a great usecase of understand more about the sentiments of the citizens around the globe during a disaster and how their responses are. Also, it helps the government to understand their citizens better and would eventually help to draft better policies accordingly. 
 
 ### Discussion of Biases
 
-[More Information Needed]
+The messages since have been translated in English may not be able to judically imply the exact significance of the individual when they would have posted the message
 
 ### Other Known Limitations
 
-[More Information Needed]
+[N/A]
 
 ## Additional Information
 
 ### Dataset Curators
 
-[More Information Needed]
+The dataset was initially created by [Appen](https://appen.com/)
 
 ### Licensing Information
 
-[More Information Needed]
+Unknown 
 
 ### Citation Information
-
-[More Information Needed]
+[Multilingual Disaster Response Messages]("https://appen.com/datasets/combined-disaster-response-data/")
